@@ -1,5 +1,5 @@
 :root {
-    --preto-fundo: #0a0a0a;
+    --preto-fundo: #00001d;
     --caramelo: #af7b4b;
     --dourado: #b99851;
     --branco-gelo: #fdfbf7;
@@ -36,7 +36,7 @@ padding: 0 20px;
 
 /* Navbar */
 header { 
-background-color: #0a0a0a; 
+background-color: #00001d; 
 position: fixed; 
 width: 100%; 
 top: 0; 
@@ -45,7 +45,7 @@ border-bottom: 0.5px solid var(--dourado);
 }
 
 nav { 
-background-color: #0a0a0a;
+background-color: #00001d;
 display: flex; 
 justify-content: space-between; 
 align-items: center; 
@@ -208,195 +208,350 @@ color: var(--dourado);
    Seção: Áreas de Atuação (Efeito Flip + Visual Premium)
    ========================================================================== */
 
+/* ==========================================================================
+   NOVA SEÇÃO DE SERVIÇOS (ESTILO CORPORATIVO LADO A LADO)
+   ========================================================================== */
+
 #servicos {
-    background-color: #f7f7f7;
+    background-color: #f7f7f7; /* Mantém o fundo off-white/clean que você queria */
     padding: 90px 0;
     width: 100%;
 }
 
-/* Moldura externa dourada arredondada idêntica ao novo design */
-.moldura-atuacao {
-    border: 2px solid var(--dourado);
-    border-radius: 24px;
-    padding: 60px 40px;
+.container-servicos {
+    max-width: 1280px; 
+    margin: 0 auto;
+    padding: 0 30px;
+    display: grid;
+    grid-template-columns: 1.4fr 0.6fr; 
+    gap: 60px; 
+    align-items: center;
+    
+    /* PULO DO GATO: Inverte a ordem visual das colunas do Grid */
+    direction: rtl; 
+}
+
+/* Força os textos da esquerda a voltarem a ler da esquerda para a direita */
+.servicos-texto {
+    display: flex;
+    flex-direction: column;
+    direction: ltr; /* Restaura o alinhamento normal do texto */
+}
+
+/* Garante que a imagem leia corretamente e cole no canto direito */
+.servicos-imagem {
+    display: flex;
+    justify-content: flex-start; /* Como invertemos a direção do container, flex-start agora significa o canto da tela */
+    width: 100%;
+    direction: ltr;
 }
 
 .tt_areas_atuacao { 
     font-family: 'Playfair Display', serif;
     font-size: 2.8rem;  
     color: var(--dourado);
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     margin-bottom: 10px;
 }
 
 .subtitulo-atuacao {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;
-    color: var(--branco-gelo);
-    opacity: 0.8;
-    margin-bottom: 50px;
-    font-weight: 300;
-}
-
-/* Grid Inteligente que força os 4 elementos a ocuparem a mesma linha horizontal */
-.grid-atuacao { 
-    display: grid; 
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 20px; 
-}
-
-/* Container do Flip (Garante o efeito de profundidade 3D) */
-.card-servico-flip { 
-    perspective: 1000px; 
-    height: 250px; /* Altura ideal fixa para os cards */
-    cursor: pointer; 
-}
-
-/* Elemento interno que executa o giro físico de 180 graus */
-.card-inner-flip { 
-    position: relative; 
-    width: 100%; 
-    height: 100%; 
-    text-align: center; 
-    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); 
-    transform-style: preserve-3d; 
-}
-
-/* Aciona a rotação ao passar o mouse por cima do card */
-.card-servico-flip:hover .card-inner-flip { 
-    transform: rotateY(180deg); 
-}
-
-/* Propriedades compartilhadas pelas faces Frontal e Traseira */
-.card-front-flip, .card-back-flip { 
-    position: absolute; 
-    width: 100%; 
-    height: 100%; 
-    backface-visibility: hidden; /* Esconde a face oposta durante a virada */
-    display: flex; 
-    flex-direction: column;
-    align-items: center; 
-    justify-content: center; 
-    padding: 25px 20px; 
-    border-radius: 28px; /* Cantos arredondados ultra suaves da referência */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-/* Face da Frente: Visual limpo com Ícone e Nome da área */
-.card-front-flip { 
-    background: var(--dourado); 
-    color: var(--preto-fundo); 
-}
-
-.icone-atuacao {
-    font-size: 2.8rem;
-    color: var(--preto-fundo);
-    margin-bottom: 20px;
-}
-
-.card-front-flip h3 {
-    font-family: 'Montserrat', sans-serif;
     font-size: 0.95rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    line-height: 1.3;
-    margin: 0;
-}
-
-/* Face de Trás: Exibe os textos explicativos detalhados */
-.card-back-flip { 
-    background: var(--caramelo); 
-    color: var(--branco-gelo); 
-    transform: rotateY(180deg); /* Começa invertida por padrão */
-    font-weight: 400; 
-    font-size: 1rem;
+    color: #555555;
+    margin-bottom: 35px;
     line-height: 1.5;
 }
 
-/* Ajuste específico para listas internas herdar formatação elegante */
-.lista-back {
-    list-style: none;
-    padding: 0;
+/* Lista contendo as barras horizontais */
+.lista-servicos-linhas {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaço entre uma linha de serviço e outra */
+}
+
+/* Cada caixinha de serviço individual */
+.linha-servico {
+    background: #ffffff;
+    border: 1px solid rgba(197, 168, 106, 0.25); /* Bordinha dourada fina e sofisticada */
+    border-radius: 12px;
+    padding: 20px 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02); /* Sombra quase imperceptível */
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Efeito sutil ao passar o mouse por cima da linha */
+.linha-servico:hover {
+    transform: translateX(5px); /* Ela desliza suavemente para o lado */
+    border-color: var(--dourado); /* O dourado ganha força */
+}
+
+/* Área do ícone na esquerda do texto */
+.icone-servico-horizontal {
+    font-size: 1.8rem;
+    color: var(--dourado);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+}
+
+/* Textos internos da caixinha */
+.conteudo-servico-horizontal h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0c1020; /* Tom azul escuro do site */
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.conteudo-servico-horizontal p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.88rem;
+    color: #666666;
     margin: 0;
+    line-height: 1.4;
 }
 
-.lista-back li {
-    margin-bottom: 6px;
-    font-size: 0.9rem;
+/* Moldura que imita exatamente o estilo da seção Sobre Mim */
+.moldura-foto-servicos {
+    width: 100%;
+    max-width: 380px;
+    border-radius: 24px; /* Arredondamento igual ao da foto de perfil */
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
-.lista-back li:last-child {
-    margin-bottom: 0;
+.moldura-foto-servicos img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
 }
 
 /* ==========================================================================
-   Responsividade Adaptativa para Telas Menores
+   Responsividade (Mobile)
    ========================================================================== */
-@media (max-width: 1100px) {
-    .grid-atuacao { 
-        grid-template-columns: repeat(2, 1fr); /* Vira 2x2 em telas médias ou tablets */
-        gap: 20px;
+@media (max-width: 992px) {
+    .container-servicos {
+        grid-template-columns: 1fr; /* Em tablets e celulares, vira uma coluna só */
+        gap: 40px;
     }
-}
-
-@media (max-width: 600px) {
-    .grid-atuacao { 
-        grid-template-columns: 1fr; /* Empilha em 1 coluna única no smartphone */
+    
+    .servicos-imagem {
+        order: -1; /* Joga a imagem para cima do texto no mobile se preferir, ou comente essa linha */
     }
-    .moldura-atuacao {
-        padding: 40px 15px;
-        border-radius: 16px;
-    }
+    
     .tt_areas_atuacao {
         font-size: 2.2rem;
     }
 }
-/* Rodapé e Contato */
+/* ==========================================================================
+   RODAPÉ E CONTATO PREMIUM
+   ========================================================================== */
 footer { 
-background: var(--azul); 
-color: var(--branco); 
+    background: #0c1020; 
+    color: #ffffff; 
+    padding: 100px 0 60px 0; /* Aumentado o padding superior para dar imponência */
+}
+
+/* Centralizador padrão da sua página */
+footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.faq-icone-circulo {
+    width: 32px;
+    height: 32px;
+    background-color: transparent;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* Estiliza o ícone dentro do círculo */
+.faq-icone-circulo i {
+    color: #C5A86A;
+    font-size: 0.9rem; /* Tamanho do ícone interno */
 }
 
 .contact-grid { 
-display: grid; 
-grid-template-columns: 1fr 1fr; 
-gap: 60px;
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 80px; /* Maior espaçamento central para distribuir melhor os lados */
+    align-items: start;
 }
 
+/* Coluna da Esquerda */
+.contato-info-bloco {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-grid h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem; /* Título maior e mais marcante */
+    color: var(--dourado);
+    margin-bottom: 35px;
+    letter-spacing: 1px;
+}
+
+/* Lista de informações de contato */
+.lista-contatos-linhas {
+    display: flex;
+    flex-direction: column;
+    gap: 22px; /* Espaço elegante entre um dado e outro */
+}
+
+.item-contato {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.item-contato i {
+    color: var(--dourado);
+    font-size: 1.2rem;
+    margin-top: 4px; /* Alinha perfeitamente com a primeira linha do texto */
+}
+
+.item-contato span {
+    font-family: 'Montserrat', sans-serif;
+    color: #cbd5e1; /* Branco suave de excelente leitura */
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* O Botão do WhatsApp alinhado */
 .btn-whatsapp { 
-background: #25d366; 
-color: white; 
-padding: 12px 25px; 
-display: inline-block; 
-border-radius: 5px; 
-text-decoration: none; 
-margin-top: 20px; 
+    background: transparent; 
+    border: 1px solid #25d366;
+    color: #25d366; 
+    padding: 14px 30px; 
+    display: inline-block; 
+    border-radius: 6px; 
+    text-decoration: none; 
+    margin-top: 35px; 
+    align-self: flex-start; /* Impede o botão de esticar até o final da tela */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.btn-whatsapp i {
+    margin-right: 8px;
+}
+
+.btn-whatsapp:hover {
+    background: #25d366;
+    color: white;
+    box-shadow: 0 5px 20px rgba(37, 211, 102, 0.25);
+}
+
+/* Bloco Horário de Atendimento (Preenche o vazio inferior da esquerda) */
+.bloco-horario {
+    margin-top: 45px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08); /* Linha divisória sutil */
+}
+
+.bloco-horario h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    color: var(--dourado);
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.bloco-horario h3 i {
+    margin-right: 8px;
+    color: var(--dourado);
+}
+
+.bloco-horario p {
+    font-family: 'Montserrat', sans-serif;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* INPUTS TRANSFORMAÇÃO (Direita) */
+.form-contato .grupo-input {
+    width: 100%;
 }
 
 .form-contato input, .form-contato textarea { 
-width: 100%; 
-padding: 12px;
-margin-bottom: 15px; 
-border-radius: 4px; 
-border: none; 
+    width: 100%; 
+    padding: 16px 20px; /* Mais espaço interno para caixas maiores e robustas */
+    margin-bottom: 20px; 
+    border-radius: 6px; 
+    background: rgba(255, 255, 255, 0.04); 
+    border: 1px solid rgba(197, 168, 106, 0.15); 
+    color: #ffffff; 
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
 }
 
+/* Cor do placeholder ajustada para melhor legibilidade no fundo escuro */
+.form-contato input::placeholder, .form-contato textarea::placeholder {
+    color: #64748b;
+}
+
+.form-contato input:focus, .form-contato textarea:focus {
+    outline: none;
+    border-color: var(--dourado); 
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 0 10px rgba(197, 168, 106, 0.1);
+}
+
+.form-contato textarea {
+    resize: vertical;
+    min-height: 190px; /* Altura ideal para equilibrar com a coluna esquerda */
+}
+
+/* Botão Enviar E-mail */
 .btn-submit { 
-background: var(--dourado); 
-color: var(--azul); 
-font-weight: bold; 
-border: none; 
-padding: 15px 30px; 
-cursor: pointer;
-width: 100%; 
+    background: var(--dourado); 
+    color: #0c1020; 
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600; 
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border: none; 
+    padding: 18px 30px; 
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%; 
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: #e0c385;
+    box-shadow: 0 5px 20px rgba(197, 168, 106, 0.2);
 }
 
 /* Mobile */
-@media (max-width: 768px) {
-    .contact-grid, .sobre-grid { grid-template-columns: 1fr; }
-    .hero h1 { font-size: 2.5rem; }
+@media (max-width: 992px) {
+    .contact-grid { 
+        grid-template-columns: 1fr; 
+        gap: 50px; 
+    }
+    footer { padding: 60px 0; }
+    .contact-grid h2 { font-size: 2.2rem; margin-bottom: 25px; }
+    .bloco-horario { margin-top: 35px; }
 }
-
 /* --- Seção Sobre Mim (Divisão em duas colunas) --- */
 
 #sobre{
@@ -487,7 +642,7 @@ width: 100%;
 
 /* Fundo da seção inteira */
 .bg-dark {
-    background-color: var(--preto-fundo);
+    background-color: #00001d;
     color: var(--branco-gelo);
     /* Configurações para esticar verticalmente de ponta a ponta */
     min-height: 100vh;       /* Ocupa no mínimo 100% da altura da tela */
@@ -506,7 +661,7 @@ width: 100%;
 
 /* Estilização individual de cada Card */
 .missao-card {
-    background-color: #121212; /* Um preto levemente mais claro que o fundo para dar relevo */
+    background-color: #000020ce; /* Um preto levemente mais claro que o fundo para dar relevo */
     border: 1px solid rgba(151, 120, 51, 0.462); /* Borda dourada bem sutil */
     padding: 40px 30px;
     border-radius: 4px;
@@ -558,4 +713,12 @@ width: 100%;
     .missao-card {
         padding: 30px 20px;
     }
+}
+
+#contato {
+    background-color: #00001d;
+    padding: 90px 0;
+    width: 100%;
+    min-height: 100vh;       /* Ocupa no mínimo 100% da altura da tela */
+    display: flex;           /* Ativa o flexbox na section */
 }
