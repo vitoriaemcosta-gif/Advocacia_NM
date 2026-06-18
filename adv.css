@@ -1,5 +1,7 @@
 /* --- Fonte Tan Mon Cheri --- */
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:wght@400;500;600&display=swap');
+
 @font-face {
     font-family: 'Tan Mon Cheri';
     src: url('fontes/tan-mon-cheri.woff2') format('woff2');
@@ -62,11 +64,24 @@ align-items: center;
 height: 80px; 
 }
 
-.logo { 
-font-family: 'Tan Mon Cheri', serif;
-font-weight: bold; 
-font-size: 1.4rem; 
-color: #b99851; 
+.sigla {
+    font-family: 'Tan Mon Cheri', serif;
+    font-size: 2.8rem;          /* Dica: Aumente um pouco o tamanho (ex: 5rem) para dar o destaque que o monograma merece */
+    font-weight: 400;         /* Deixar mais fina traz a elegância da imagem original */
+    color: var(--dourado); 
+    line-height: 1;
+    letter-spacing: -0.26em;  /* O segredo mágico! Ajuste esse número até o encaixe ficar perfeito */
+    display: inline-block;
+}
+
+.sigla .letra-n {
+    display: inline-block;
+}
+
+/* Empurra o M um pouco para baixo */
+.sigla .letra-m {
+    display: inline-block;
+    transform: translateY(14px);  /* Valores positivos descem a letra */
 }
 
 .nav-links { 
@@ -76,7 +91,7 @@ list-style: none;
 
 .nav-links li a { 
 text-decoration: none; 
-color: var(--caramelo); 
+color: var(--dourado); 
 margin-left: 25px; 
 font-weight: 600; 
 font-size: 0.9rem; 
@@ -84,7 +99,7 @@ transition: 0.3s;
 }
 
 .nav-links li a:hover { 
-color: var(--dourado); 
+color: #e0c385; 
 }
 
 .menu-toggle {
@@ -129,67 +144,77 @@ color: var(--dourado);
     }
 }
 
-/* ==========================================================================
-   SEÇÃO HERO
-   ========================================================================== */
-
-   .hero {
-    background: #0c1020; /* Azul escuro corporativo */
+.hero {
+    background: #00001d; 
     height: 100vh;
-    min-height: 600px; /* Garante que em telas muito baixas o conteúdo não quebre */
+    min-height: 600px; 
     display: flex;
-    align-items: center;
-    overflow: hidden; /* ESSENCIAL: impede que a coluna gigante crie barra de rolagem horizontal */
-    position: relative; /* ESSENCIAL: serve de âncora para alinhar a imagem absoluta */
+    align-items: center; /* Mantém o alinhamento vertical */
+    overflow: hidden; 
+    position: relative; 
+    /* Diminuímos o padding-top para fazer o bloco de textos subir de posição */
+    padding-top: 40px; 
+}
+
+.hero-conteudo {
+    display: flex;
+    flex-direction: column;
+    max-width: 650px; 
+    align-items: flex-start;
+    /* Subimos levemente o bloco aplicando uma margem negativa sutil */
+    margin-top: -60px; 
 }
 
 .hero .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 30px;
+    padding: 0 0px;
     width: 100%;
     position: relative;
     z-index: 2; /* Garante que o texto fique por cima da imagem caso se cruzem */
 }
 
-/* Estilização dos Textos (Esquerda) */
-.hero-conteudo {
-    display: flex;
-    flex-direction: column;
-    max-width: 650px; /* Limita a largura do texto para não colidir com o desenho */
-}
-
-.hero-marca {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 25px;
-}
-
-.hero-marca .sigla {
-    font-family: 'Tan Mon Cheri', serif;
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--dourado); /* Dourado premium */
-    line-height: 1;
-}
-
-.hero-marca .nome-escritorio {
+/* O pequeno texto dourado introdutório (Substituiu a antiga logo repetida) */
+.hero-subtitle {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.1rem;
-    color: #ffffff;
-    letter-spacing: 1px;
-    margin-top: 5px;
+    color: var(--dourado);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 500;
+    margin-bottom: 20px;
 }
 
-.hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 3.8rem;
+/* Slogan principal transformativo da marca */
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem; /* Ajustado milimetricamente para o equilíbrio da nova frase */
+    font-weight: 400;
     color: #ffffff;
-    line-height: 1.2;
-    margin-bottom: 40px;
+    line-height: 1.25; /* Mais espaço vertical entre as palavras para respirar */
+    margin-top: 0;
+    margin-bottom: 20px; /* Espaço reduzido para acomodar a nova linha divisória */
 }
 
-/* Botão Entre em Contato */
+/* A pequena linha dourada divisória horizontal */
+.hero-divider {
+    width: 90px;
+    height: 1px;
+    background-color: var(--dourado);
+    margin-bottom: 30px;
+}
+
+/* Parágrafo descritivo/texto de apoio */
+.hero-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.05rem;
+    color: #a0a0b8; /* Cinza azulado elegante vindo da sua paleta */
+    line-height: 1.6;
+    margin: 0 0 40px 0;
+    max-width: 450px;
+}
+
+/* Botão Entre em Contato Atualizado */
 .btn-hero {
     background: #b39659;
     color: #0c1020;
@@ -197,38 +222,97 @@ color: var(--dourado);
     font-weight: 600;
     text-transform: uppercase;
     text-decoration: none;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     padding: 16px 35px;
     border-radius: 4px;
     align-self: flex-start;
     font-size: 0.9rem;
-    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px; /* Espaço entre o texto e a setinha */
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Transição para animação da seta interna do botão */
+.btn-hero .arrow {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
 }
 
 .btn-hero:hover {
     background: #e0c385;
-    box-shadow: 0 5px 20px rgba(197, 168, 106, 0.3);
+    box-shadow: 0 10px 25px rgba(197, 168, 106, 0.25);
     transform: translateY(-2px);
 }
 
-/* COLUNA DA DIREITA: PREENCHIMENTO INTEGRAL DA LATERAL */
+.btn-hero:hover .arrow {
+    transform: translateX(5px); /* A seta faz um sutil movimento para o lado no hover */
+}
+
+/* COLUNA DA DIREITA: PREENCHIMENTO INTEGRAL DA LATERAL (Mantido original) */
 .coluna-grega-img {
     position: absolute;
-    right: 0px;       /* Joga ligeiramente para fora da tela na direita para o corte elegante */
+    right: -30px;       /* Joga ligeiramente para fora da tela na direita para o corte elegante */
     top: 12%;           /* Alinha o topo do desenho um pouco abaixo do menu superior */
     height: 88%;        /* Faz a coluna esticar e ficar gigante na seção */
     width: auto;        /* Mantém a proporção exata para não achatar o desenho */
     object-fit: contain;
     z-index: 1;         /* Camada abaixo do texto */
-    opacity: 0.85;      
+    opacity: 0.60;      
     pointer-events: none; /* Evita que o usuário clique ou selecione a imagem sem querer */
+    
 }
 
-/* Responsividade para Celulares e Tablets */
+/* Informações do Rodapé Geográfico da Hero */
+.hero-footer-info {
+    position: absolute;
+    left: 0; 
+    bottom: -60px; 
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    color: #52526b; 
+    letter-spacing: 0.5px;
+    z-index: 3;
+}
+
+/* A linha vertical decorativa antes do nome no rodapé */
+.info-line {
+    position: relative;
+    padding-left: 15px;
+}
+
+.info-line::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 14px;
+    background-color: rgba(185, 152, 81, 0.4);
+}
+
+.info-dot {
+    color: var(--dourado);
+}
+
+/* ==========================================================================
+   Responsividade para Celulares e Tablets (Ajustado)
+   ========================================================================== */
+@media (max-width: 1280px) {
+    /* Garante que o rodapé geográfico não quebre em telas médias antes de ir pro mobile */
+    .hero-footer-info {
+        left: 30px; 
+    }
+}
+
 @media (max-width: 992px) {
     .hero {
         text-align: center;
-        padding-top: 60px;
+        padding-top: 100px;
     }
     
     .hero-conteudo {
@@ -240,11 +324,11 @@ color: var(--dourado);
         align-self: center;
     }
     
-    .hero h1 {
+    .hero-title {
         font-size: 2.8rem;
     }
     
-    /* No celular, ela vira um elemento sutil ao fundo centralizado */
+    /* No celular, ela vira um elemento sutil ao fundo centralizado (Mantido original) */
     .coluna-grega-img {
         height: 50%;
         top: auto;
@@ -253,8 +337,15 @@ color: var(--dourado);
         transform: translateX(50%); /* Centraliza perfeitamente no fundo */
         opacity: 0.15; /* Bem clarinha para não atrapalhar a leitura dos textos */
     }
+    
+    .hero-footer-info {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        margin-top: 60px;
+        justify-content: center;
+    }
 }
-
 /* --- Seção Sobre Mim (Divisão em duas colunas) --- */
 
 #sobre{
@@ -424,155 +515,133 @@ color: var(--dourado);
 }
 
 /* ==========================================================================
-   SEÇÃO ÁREAS DE ATUAÇÃO 
+   REMODELAÇÃO: ÁREAS DE ATUÇÃO (ESTILO EDITORIAL MINIMALISTA)
    ========================================================================== */
 
 #servicos {
-    background-color: #f7f7f7; /* Mantém o fundo off-white/clean que você queria */
-    padding: 90px 0;
+    background-color: var(--branco-gelo); /* Mantém o fundo claro desejado */
+    padding: 120px 0;
     width: 100%;
 }
 
-.container-servicos {
-    max-width: 1280px; 
-    margin: 0 auto;
-    padding: 0 30px;
-    display: grid;
-    grid-template-columns: 1.4fr 0.6fr; 
-    gap: 60px; 
-    align-items: center;
-    
-    /* PULO DO GATO: Inverte a ordem visual das colunas do Grid */
-    direction: rtl; 
-}
-
-/* Força os textos da esquerda a voltarem a ler da esquerda para a direita */
-.servicos-texto {
-    display: flex;
-    flex-direction: column;
-    direction: ltr; /* Restaura o alinhamento normal do texto */
-}
-
-/* Garante que a imagem leia corretamente e cole no canto direito */
-.servicos-imagem {
-    display: flex;
-    justify-content: flex-start; /* Como invertemos a direção do container, flex-start agora significa o canto da tela */
-    width: 100%;
-    direction: ltr;
+.servicos-header {
+    margin-bottom: 80px;
 }
 
 .tt_areas_atuacao { 
     font-family: 'Tan Mon Cheri', serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-size: 2.8rem;  
+    font-size: 3.2rem;  
     color: var(--dourado);
-    letter-spacing: 1px;
-    margin-bottom: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
 }
 
 .subtitulo-atuacao {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.95rem;
-    color: #555555;
-    margin-bottom: 35px;
-    line-height: 1.5;
+    color: #5d5151;
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.6;
 }
 
-/* Lista contendo as barras horizontais */
-.lista-servicos-linhas {
+/* Container que divide os 4 serviços em um layout elegante de 2x2 sem caixas */
+.linhas-editoriais-servicos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px 80px; /* Espaçamento largo e sofisticado */
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* O Item Editorial: Baseado em linhas divisórias finas */
+.item-editorial {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    padding: 30px;
+    border-radius: 4px;
+    border: 1px solid #b39659; /* Linha dourada fina horizontal */
+    transition: all 0.3s ease;
+}
+
+/* Ícone elegante e discreto na lateral */
+.editorial-icon {
+    font-size: 2rem;
+    color: var(--dourado);
+    padding-top: 4px; /* Alinha perfeitamente com a primeira linha do título */
+}
+
+.linha-vertical-ouro {
+    width: 1px;             /* Espessura */
+    height: 100px;          /* Altura que você desejar para a linha */
+    background-color: #b39659;
+    margin: 0 20px;         /* Espaçamento nas laterais para afastar outros elementos */
+}
+
+/* Alinhamento dos textos */
+.editorial-content {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Espaço entre uma linha de serviço e outra */
 }
 
-/* Cada caixinha de serviço individual */
-.linha-servico {
-    background: #ffffff;
-    border: 1px solid rgba(197, 168, 106, 0.25); /* Bordinha dourada fina e sofisticada */
-    border-radius: 12px;
-    padding: 20px 25px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02); /* Sombra quase imperceptível */
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-/* Efeito sutil ao passar o mouse por cima da linha */
-.linha-servico:hover {
-    transform: translateX(5px); /* Ela desliza suavemente para o lado */
-    border-color: var(--dourado); /* O dourado ganha força */
-}
-
-/* Área do ícone na esquerda do texto */
-.icone-servico-horizontal {
-    font-size: 1.8rem;
-    color: var(--dourado);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 40px;
-}
-
-/* Textos internos da caixinha */
-.conteudo-servico-horizontal h3 {
+/* Títulos elegantes em Azul Escuro */
+.editorial-content h3 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.05rem;
-    font-weight: 400;
-    color: #0c1020; /* Tom azul escuro do site */
-    margin: 0 0 5px 0;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #00001d; /* Conecta com o tom principal do site */
+    margin: 0 0 12px 0;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
-.conteudo-servico-horizontal p {
+/* Descrições */
+.editorial-content p {
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.88rem;
-    color: #666666;
+    font-size: 0.9rem;
+    color: #5d5151;
+    line-height: 1.6;
     margin: 0;
-    line-height: 1.4;
 }
 
-.moldura-foto-servicos {
-    width: 100%;
-    max-width: 380px;
-    border-radius: 24px; /* Arredondamento igual ao da foto de perfil */
-    overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-}
-
-.moldura-foto-servicos img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
+/* Interação sutil ao passar o mouse (a linha dourada ganha vida) */
+.item-editorial:hover {
+    border-bottom-color: #00001d; /* A linha muda sutilmente para o azul escuro */
+    transform: translateX(5px); /* Um leve movimento lateral, totalmente diferente do vertical da missão */
 }
 
 /* ==========================================================================
-   Responsividade (Mobile)
+   Responsividade
    ========================================================================== */
 @media (max-width: 992px) {
-    .container-servicos {
-        grid-template-columns: 1fr; /* Em tablets e celulares, vira uma coluna só */
+    .linhas-editoriais-servicos {
+        grid-template-columns: 1fr; /* Vira uma coluna única em tablets e celulares */
         gap: 40px;
     }
-    
-    .servicos-imagem {
-        order: -1; /* Joga a imagem para cima do texto no mobile se preferir, ou comente essa linha */
-    }
-    
+}
+
+@media (max-width: 768px) {
     .tt_areas_atuacao {
-        font-size: 2.2rem;
+        font-size: 2.4rem;
     }
 }
+
 /* ==========================================================================
    RODAPÉ E CONTATO PREMIUM
    ========================================================================== */
-footer { 
-    background: #0c1020; 
+#contato {
+    padding: 90px 0;     /* Ocupa no mínimo 100% da altura da tela */
+             /* Ativa o flexbox na section */
+}
+
+   footer { 
+    background-color: #00001d; 
     color: #ffffff; 
-    padding: 100px 0 60px 0; /* Aumentado o padding superior para dar imponência */
+    display: flex;  
+    padding: 100px 0 100px 0; /* Aumentado o padding superior para dar imponência */
 }
 
 /* Centralizador padrão da sua página */
@@ -588,10 +657,9 @@ footer .container {
     background-color: transparent;
     border-radius: 50%;
     display: flex;
-    align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    margin-top: 2px;
+    margin-top: 4px;
 }
 
 /* Estiliza o ícone dentro do círculo */
@@ -603,7 +671,7 @@ footer .container {
 .contact-grid { 
     display: grid; 
     grid-template-columns: 1fr 1fr; 
-    gap: 80px; /* Maior espaçamento central para distribuir melhor os lados */
+    gap: 200px; /* Maior espaçamento central para distribuir melhor os lados */
     align-items: start;
 }
 
@@ -637,7 +705,6 @@ footer .container {
 .item-contato i {
     color: var(--dourado);
     font-size: 1.2rem;
-    margin-top: 4px; /* Alinha perfeitamente com a primeira linha do texto */
 }
 
 .item-contato span {
@@ -770,10 +837,3 @@ footer .container {
 }
 
 
-#contato {
-    background-color: #00001d;
-    padding: 90px 0;
-    width: 100%;
-    min-height: 100vh;       /* Ocupa no mínimo 100% da altura da tela */
-    display: flex;           /* Ativa o flexbox na section */
-}

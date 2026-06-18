@@ -19,7 +19,10 @@
 
     <header>
         <nav class="container">
-        <div class="logo">NM ADVOCACIA</div>
+        <span class="sigla">
+            <span class="letra-n">N</span>
+            <span class="letra-m">M</span>
+        </span>
         
         <div class="menu-toggle" id="mobile-menu">
             <span class="bar"></span>
@@ -38,20 +41,41 @@
     </header>
 
     <section class="hero">
+    <!-- Sua imagem mantida exatamente no mesmo lugar -->
+    <img src="img/coluna.png" alt="NM Advocacia" class="coluna-grega-img">
 
-        <img src="img/coluna.png" alt="NM Advocacia" class="coluna-grega-img">
-
-        <div class="container hero-grid">
-            <div class="hero-conteudo">
-                <div class="hero-marca">
-                    <span class="sigla">NM</span>
-                    <span class="nome-escritorio">Nelemar Machado Advocacia</span>
-                </div>
-                <h1>Experiência que Transforma Direitos em Conquistas</h1>
-                <a href="#contato" class="btn-hero">Entre em Contato</a>
-            </div>
+    <div class="container hero-grid">
+        <div class="hero-conteudo">
+            <!-- Texto dourado de introdução do novo layout -->
+            <span class="hero-subtitle">Advocacia Especializada</span>
+            
+            <!-- O título principal serifado ajustado conforme a referência -->
+            <h1 class="hero-title">Defendendo seus direitos
+            com estratégia e excelência</h1>
+            
+            <!-- A linha fina divisória elegante -->
+            <div class="hero-divider"></div>
+            
+            <!-- Texto de apoio/descrição -->
+            <p class="hero-text">
+                Atuação jurídica personalizada para pessoas e empresas.
+            </p>
+            
+            <!-- Seu botão adaptado com a setinha de ação -->
+            <a href="#contato" class="btn-hero">
+                Agendar Consulta <span class="arrow">→</span>
+            </a>
         </div>
-    </section>
+    
+    
+    <!-- Elemento de localização inserido na base da seção -->
+    <div class="hero-footer-info">
+        <span class="info-line">Nelemar Machado Advocacia</span>
+        <span class="info-dot">•</span>
+        <span>São Paulo – Brasil</span>
+    </div>
+    
+</section>
 
     <section id="sobre" class="section">
         <div class="container sobre-grid">
@@ -97,61 +121,54 @@
     </div>
 </section>
 
-    <section id="servicos">
-    <div class="container-servicos">
+<section id="servicos" class="section">
+    <div class="container">
+        <div class="servicos-header text-center">
+            <h2 class="tt_areas_atuacao">Áreas de Atuação</h2>
+            <p class="subtitulo-atuacao">Atuação jurídica de excelência focada em segurança estratégica e no relacionamento transparente com o cliente.</p>
+        </div>
 
-        <div class="servicos-texto">
-            <h2 class="tt_areas_atuacao">ÁREAS DE ATUAÇÃO</h2>
-            <p class="subtitulo-atuacao">Atuação jurídica focada em segurança, estratégia e relacionamento transparente com o cliente.</p>
-            
-            <div class="lista-servicos-linhas">
-                <div class="linha-servico">
-                    <div class="icone-servico-horizontal">
-                        <i class="fa-solid fa-scale-balanced"></i> </div>
-                    <div class="conteudo-servico-horizontal">
-                        <h3>Direito Trabalhista</h3>
-                        <p>Atuação estratégica e preventiva nas relações de trabalho, defendendo direitos e garantias.</p>
-                    </div>
+        <div class="linhas-editoriais-servicos">
+            <!-- Item 1 -->
+            <div class="item-editorial">
+                <div class="editorial-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                <div class="linha-vertical-ouro"></div>
+                <div class="editorial-content">
+                    <h3>Direito Trabalhista</h3>
+                    <p>Atuação estratégica e preventiva nas relações de trabalho, defendendo direitos e garantias com rigor técnico.</p>
                 </div>
+            </div>
 
-                <div class="linha-servico">
-                    <div class="icone-servico-horizontal">
-                        <i class="fa-solid fa-gavel"></i>
-                    </div>
-                    <div class="conteudo-servico-horizontal">
-                        <h3>Direito Civil</h3>
-                        <p>Soluções jurídicas para questões familiares, contratuais, obrigações e direito patrimonial.</p>
-                    </div>
+            <!-- Item 2 -->
+            <div class="item-editorial">
+                <div class="editorial-icon"><i class="fa-solid fa-gavel"></i></div>
+                <div class="linha-vertical-ouro"></div>
+                <div class="editorial-content">
+                    <h3>Direito Civil</h3>
+                    <p>Soluções jurídicas personalizadas para questões familiares, contratuais, obrigações e proteção patrimonial.</p>
                 </div>
+            </div>
 
-                <div class="linha-servico">
-                    <div class="icone-servico-horizontal">
-                        <i class="fa-solid fa-building"></i>
-                    </div>
-                    <div class="conteudo-servico-horizontal">
-                        <h3>Direito Empresarial</h3>
-                        <p>Consultoria e assessoria jurídica completa para o crescimento, blindagem e segurança de negócios.</p>
-                    </div>
+            <!-- Item 3 -->
+            <div class="item-editorial">
+                    <div class="editorial-icon"><i class="fa-solid fa-building"></i></div>
+                    <div class="linha-vertical-ouro"></div>
+                    <div class="editorial-content">
+                    <h3>Direito Empresarial</h3>
+                    <p>Consultoria e assessoria jurídica completa para o crescimento sustentável, blindagem e segurança de negócios.</p>
                 </div>
+            </div>
 
-                <div class="linha-servico">
-                    <div class="icone-servico-horizontal">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <div class="conteudo-servico-horizontal">
-                        <h3>Consultoria Preventiva</h3>
-                        <p>Análise estratégica detalhada para mitigar riscos legais e antecipar potenciais conflitos.</p>
-                    </div>
+            <!-- Item 4 -->
+            <div class="item-editorial">
+                <div class="editorial-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <div class="linha-vertical-ouro"></div>
+                <div class="editorial-content">
+                    <h3>Consultoria Preventiva</h3>
+                    <p>Análise estratégica detalhada para mitigar riscos legais, reduzir passivos e antecipar potenciais conflitos.</p>
                 </div>
             </div>
         </div>
-
-        <div class="servicos-imagem">
-            <div class="moldura-foto-servicos">
-                <img src="img/img_servicos.jpg" alt="Dra. Nelemar Machado">
-            </div>
-        </div>
-
     </div>
 </section>
 
