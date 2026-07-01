@@ -1,7 +1,11 @@
-/* --- Fonte Tan Mon Cheri --- */
+/* ==========================================
+   CONFIGURAÇÕES GERAIS E FONTES
+   ========================================== */
 
+/* Importação das fontes secundárias do projeto pelo Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:wght@400;500;600&display=swap');
 
+/* Declaração da fonte principal */
 @font-face {
     font-family: 'Tan Mon Cheri';
     src: url('fontes/tan-mon-cheri.woff2') format('woff2');
@@ -10,124 +14,140 @@
     font-display: swap;
 }
 
+/* Variáveis globais de cores do projeto */
 :root {
-    --preto-fundo: #00001d;
     --caramelo: #af7b4b;
     --dourado: #b99851;
     --branco-gelo: #fdfbf7;
+    --azul-fundo: #00001d;
 }
 
+/* Reset padrão e comportamento do scroll linkado */
 * { 
-margin: 0; 
-padding: 0; 
-box-sizing: border-box; 
-scroll-behavior: smooth; 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    scroll-behavior: smooth; 
 }
 
+/* Definição de tipografia e cor padrão do corpo do site */
 body { 
-font-family: 'Montserrat', sans-serif; 
-color: #5d5151; 
+    font-family: 'Montserrat', sans-serif; 
+    color: #5d5151; 
 }
 
+/* Limitador de largura centralizado para o conteúdo das seções */
 .container { 
-max-width: 1200px; 
-margin: 0 auto; 
-padding: 0 20px; 
-
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
 }
 
+/* Centralização rápida de textos */
 .text-center { 
     text-align: center; 
 }
 
-/* Garante que o padding de espaçamento vertical aconteça na seção inteira (que ocupa 100% da tela) */
+/* Bloco base para espaçamento vertical e preenchimento das seções */
 .section { 
-    padding:90px 0; 
-    width: 100%; /* Força ocupar a largura total da janela do navegador */
+    padding: 90px 0; 
+    width: 100%;
 }
 
-/* Navbar */
+/* ==========================================
+   NAVBAR
+   ========================================== */
+
+/* Fixação do menu no topo da tela durante a rolagem */
 header { 
-background-color: #00001d; 
-position: fixed; 
-width: 100%; 
-top: 0; 
-z-index: 1000; 
-border-bottom: 0.5px solid var(--dourado); 
+    background-color: var(--azul-fundo); 
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    z-index: 1000; /* Evita que elementos das seções fiquem por cima do menu */
+    border-bottom: 0.5px solid var(--dourado); 
 }
 
+/* Container de alinhamento dos elementos internos da navbar */
 nav { 
-background-color: #00001d;
-display: flex; 
-justify-content: space-between; 
-align-items: center; 
-height: 80px; 
+    background-color: var(--azul-fundo);
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    height: 80px; 
 }
 
+/* Ajustes finos do lettering do monograma principal */
 .sigla {
     font-family: 'Tan Mon Cheri', serif;
-    font-size: 2.8rem;          /* Dica: Aumente um pouco o tamanho (ex: 5rem) para dar o destaque que o monograma merece */
-    font-weight: 400;         /* Deixar mais fina traz a elegância da imagem original */
+    font-size: 2.8rem;
+    font-weight: 400;
     color: var(--dourado); 
     line-height: 1;
-    letter-spacing: -0.26em;  /* O segredo mágico! Ajuste esse número até o encaixe ficar perfeito */
+    letter-spacing: -0.26em; /* Efeito visual de encaixe aproximado entre as letras */
     display: inline-block;
 }
 
+/* Reset de bloco para a primeira letra do monograma */
 .sigla .letra-n {
     display: inline-block;
 }
 
-/* Empurra o M um pouco para baixo */
+/* Deslocamento vertical específico para alinhar visualmente a letra M */
 .sigla .letra-m {
     display: inline-block;
-    transform: translateY(14px);  /* Valores positivos descem a letra */
+    transform: translateY(14px); 
 }
 
+/* Base de estilização e área de clique dos links da navegação */
 .nav-link {
-    color: #cca663; /* Tom de dourado do seu menu */
+    color: #cca663;
     text-decoration: none;
-    padding-bottom: 5px; /* Espaço entre o texto e o traço */
-    border-bottom: 2px solid transparent; /* Deixa o traço invisível por padrão */
-    transition: border-color 0.3s ease; /* Transição suave */
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent; /* Reserva o espaço da borda para o hover */
+    transition: border-color 0.3s ease;
 }
 
-/* Efeito ao passar o mouse */
+/* Ativação da borda inferior ao passar o mouse */
 .nav-link:hover {
     border-bottom-color: #cca663;
 }
 
-/* CLASSE ATIVA: É ela que vai manter o traço fixo */
+/* Traço fixo para indicar a seção ou página em exibição */
 .nav-link.active {
-    border-bottom-color: var(--dourado); /* Fixa o traço dourado na aba ativa */
+    border-bottom-color: var(--dourado); 
 }
 
+/* Lista que organiza os links horizontalmente no desktop */
 .nav-links { 
-display: flex; 
-list-style: none; 
+    display: flex; 
+    list-style: none; 
 }
 
+/* Tipografia e espaçamento individual dos links do menu */
 .nav-links li a { 
-text-decoration: none; 
-color: var(--dourado); 
-margin-left: 25px; 
-font-weight: 600; 
-font-size: 0.9rem; 
-transition: 0.3s; 
+    text-decoration: none; 
+    color: var(--dourado); 
+    margin-left: 25px; 
+    font-weight: 600; 
+    font-size: 0.9rem; 
+    transition: 0.3s; 
 }
 
+/* Transição de cor e borda fina no hover do link */
 .nav-links li a:hover { 
-color: #e0c385; 
-border-bottom: 1px solid #e0c385;
+    color: #e0c385; 
+    border-bottom: 1px solid #e0c385;
 }
 
+/* Ícone de menu hambúrguer ocultado por padrão no desktop */
 .menu-toggle {
     display: none;
     flex-direction: column;
     cursor: pointer;
-    
 }
 
+/* Linhas individuais que compõem o ícone do menu mobile */
 .bar {
     width: 25px;
     height: 3px;
@@ -136,15 +156,17 @@ border-bottom: 1px solid #e0c385;
     transition: 0.4s;
 }
 
-/* Media Query para Celulares */
+/* Responsividade do cabeçalho para tablets e celulares */
 @media (max-width: 768px) {
+    /* Exibe o gatilho do menu hambúrguer */
     .menu-toggle {
-        display: flex; /* Mostra os tracinhos no celular */
+        display: flex;
     }
 
+    /* Transforma a lista de links em menu lateral vertical oculto */
     .nav-links {
         position: absolute;
-        right: -100%; /* Esconde o menu para a direita */
+        right: -100%; 
         top: 80px;
         flex-direction: column;
         background-color: var(--branco);
@@ -154,46 +176,53 @@ border-bottom: 1px solid #e0c385;
         box-shadow: 0 10px 10px rgba(0,0,0,0.1);
     }
 
+    /* Classe injetada via JS para abrir o menu mobile trazendo-o para a tela */
     .nav-links.active {
-        right: 0; /* Mostra o menu quando ativo */
+        right: 0;
     }
 
+    /* Espaçamento vertical entre os itens do menu mobile */
     .nav-links li {
         margin: 20px 0;
     }
 }
 
+/* ==========================================
+   HERO SECTION
+   ========================================== */
+
+/* Configurações estruturais do bloco de abertura (dobra principal) */
 .hero {
-    background: #00001d; 
+    background: var(--azul-fundo); 
     height: 100vh;
-    min-height: 600px; 
+    min-height: 600px; /* Impede achatamento do conteúdo em resoluções com pouca altura */
     display: flex;
-    align-items: center; /* Mantém o alinhamento vertical */
+    align-items: center;
     overflow: hidden; 
     position: relative; 
-    /* Diminuímos o padding-top para fazer o bloco de textos subir de posição */
     padding-top: 40px; 
 }
 
+/* Box de controle e largura máxima do texto da dobra principal */
 .hero-conteudo {
     display: flex;
     flex-direction: column;
     max-width: 650px; 
     align-items: flex-start;
-    /* Subimos levemente o bloco aplicando uma margem negativa sutil */
-    margin-top: -60px; 
+    margin-top: -60px; /* Sobe o alinhamento visual do bloco de texto */
 }
 
+/* Ajustes no container da Hero para receber elementos com posicionamento absoluto */
 .hero .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 0px;
+    padding: 0;
     width: 100%;
     position: relative;
-    z-index: 2; /* Garante que o texto fique por cima da imagem caso se cruzem */
+    z-index: 2; /* Mantém os textos na frente da imagem da coluna grega */
 }
 
-/* O pequeno texto dourado introdutório (Substituiu a antiga logo repetida) */
+/* Tag/texto superior curto que antecede o título principal */
 .hero-subtitle {
     font-family: 'Montserrat', sans-serif;
     color: var(--dourado);
@@ -204,18 +233,18 @@ border-bottom: 1px solid #e0c385;
     margin-bottom: 20px;
 }
 
-/* Slogan principal transformativo da marca */
+/* Slogan/Título principal com destaque tipográfico da seção hero */
 .hero-title {
     font-family: 'Playfair Display', serif;
-    font-size: 3rem; /* Ajustado milimetricamente para o equilíbrio da nova frase */
+    font-size: 3rem;
     font-weight: 400;
     color: #ffffff;
-    line-height: 1.25; /* Mais espaço vertical entre as palavras para respirar */
+    line-height: 1.25;
     margin-top: 0;
-    margin-bottom: 20px; /* Espaço reduzido para acomodar a nova linha divisória */
+    margin-bottom: 20px;
 }
 
-/* A pequena linha dourada divisória horizontal */
+/* Divisor estético horizontal abaixo do título */
 .hero-divider {
     width: 90px;
     height: 1px;
@@ -223,19 +252,19 @@ border-bottom: 1px solid #e0c385;
     margin-bottom: 30px;
 }
 
-/* Parágrafo descritivo/texto de apoio */
+/* Parágrafo ou texto de apoio explicativo da Hero */
 .hero-text {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.05rem;
-    color: #a0a0b8; /* Cinza azulado elegante vindo da sua paleta */
+    color: #a0a0b8;
     line-height: 1.6;
     margin: 0 0 40px 0;
     max-width: 450px;
 }
 
-/* Botão Entre em Contato Atualizado */
+/* Estrutura do botão principal Call to Action (CTA) */
 .btn-hero {
-    background: #b39659;
+    background: var(--dourado);
     color: #0c1020;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
@@ -244,45 +273,46 @@ border-bottom: 1px solid #e0c385;
     letter-spacing: 1.5px;
     padding: 16px 35px;
     border-radius: 4px;
-    align-self: flex-start;
+    align-self: flex-start; /* Evita que o elemento herde a largura total do flex container */
     font-size: 0.9rem;
     display: inline-flex;
     align-items: center;
-    gap: 12px; /* Espaço entre o texto e a setinha */
+    gap: 12px;
     transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Transição para animação da seta interna do botão */
+/* Elemento interno do botão que guarda o ícone de seta */
 .btn-hero .arrow {
     font-size: 1.1rem;
     transition: transform 0.3s ease;
 }
 
+/* Alterações de cor, sombra e elevação no hover do botão hero */
 .btn-hero:hover {
-    background: #e0c385;
+    background: var(--dourado);
     box-shadow: 0 10px 25px rgba(197, 168, 106, 0.25);
     transform: translateY(-2px);
 }
 
+/* Deslocamento do ícone de seta para a direita ao passar o mouse */
 .btn-hero:hover .arrow {
-    transform: translateX(5px); /* A seta faz um sutil movimento para o lado no hover */
+    transform: translateX(5px);
 }
 
-/* COLUNA DA DIREITA: PREENCHIMENTO INTEGRAL DA LATERAL (Mantido original) */
+/* Imagem decorativa de fundo posicionada de forma absoluta na lateral */
 .coluna-grega-img {
     position: absolute;
-    right: -30px;       /* Joga ligeiramente para fora da tela na direita para o corte elegante */
-    top: 12%;           /* Alinha o topo do desenho um pouco abaixo do menu superior */
-    height: 88%;        /* Faz a coluna esticar e ficar gigante na seção */
-    width: auto;        /* Mantém a proporção exata para não achatar o desenho */
+    right: -30px; /* Sangria para fora do limite da tela para efeito visual */
+    top: 12%;
+    height: 88%;
+    width: auto;
     object-fit: contain;
-    z-index: 1;         /* Camada abaixo do texto */
-    opacity: 0.60;      
-    pointer-events: none; /* Evita que o usuário clique ou selecione a imagem sem querer */
-    
+    z-index: 1; /* Alinhada abaixo da camada de texto (.container z-index:2) */
+    opacity: 0.60;
+    pointer-events: none; /* Bloqueia cliques ou seleção indesejada na imagem */
 }
 
-/* Informações do Rodapé Geográfico da Hero */
+/* Bloco inferior contendo informações de geolocalização ou rodapé interno */
 .hero-footer-info {
     position: absolute;
     left: 0; 
@@ -297,12 +327,13 @@ border-bottom: 1px solid #e0c385;
     z-index: 3;
 }
 
-/* A linha vertical decorativa antes do nome no rodapé */
+/* Espaçamento interno para os itens separados por barra vertical */
 .info-line {
     position: relative;
     padding-left: 15px;
 }
 
+/* Injeção do traço vertical separador via pseudo-elemento */
 .info-line::before {
     content: '';
     position: absolute;
@@ -314,49 +345,53 @@ border-bottom: 1px solid #e0c385;
     background-color: rgba(185, 152, 81, 0.4);
 }
 
+/* Customização de cor para pontos demarcadores ou ícones pequenos */
 .info-dot {
     color: var(--dourado);
 }
 
-/* ==========================================================================
-   Responsividade para Celulares e Tablets (Ajustado)
-   ========================================================================== */
+/* Ajustes da seção Hero em resoluções intermediárias e mobiles */
 @media (max-width: 1280px) {
-    /* Garante que o rodapé geográfico não quebre em telas médias antes de ir pro mobile */
+    /* Reposiciona as informações do rodapé interno para não colarem na borda */
     .hero-footer-info {
         left: 30px; 
     }
 }
 
 @media (max-width: 992px) {
+    /* Centralização geral do layout de textos na versão mobile */
     .hero {
         text-align: center;
         padding-top: 100px;
     }
     
+    /* Força os elementos internos a alinharem ao centro do eixo horizontal */
     .hero-conteudo {
         align-items: center;
         max-width: 100%;
     }
     
+    /* Alinhamento próprio do botão para o centro da tela */
     .btn-hero {
         align-self: center;
     }
     
+    /* Redução do tamanho da fonte do título para evitar quebras agressivas */
     .hero-title {
         font-size: 2.8rem;
     }
     
-    /* No celular, ela vira um elemento sutil ao fundo centralizado (Mantido original) */
+    /* Reposiciona a imagem decorativa de fundo centralizada no mobile */
     .coluna-grega-img {
         height: 50%;
         top: auto;
         bottom: 0;
         right: 50%;
-        transform: translateX(50%); /* Centraliza perfeitamente no fundo */
-        opacity: 0.15; /* Bem clarinha para não atrapalhar a leitura dos textos */
+        transform: translateX(50%);
+        opacity: 0.15; /* Reduz a opacidade para garantir contraste com o texto sobreposto */
     }
     
+    /* Transforma o rodapé absoluto em bloco flex comum no fluxo da página */
     .hero-footer-info {
         position: relative;
         bottom: auto;
@@ -365,26 +400,31 @@ border-bottom: 1px solid #e0c385;
         justify-content: center;
     }
 }
-/* --- Seção Sobre Mim (Divisão em duas colunas) --- */
 
-#sobre{
+/* ==========================================
+   SEÇÃO SOBRE MIM
+   ========================================== */
+
+/* Definição do tom cinza claro de fundo para quebra de seção */
+#sobre {
     background-color: #f7f7f7;
 }
 
+/* Grid ou Flexbox para alinhamento lado a lado da foto e da descrição */
 .sobre-grid {
     display: flex;
-    align-items: center;          /* Alinha verticalmente o texto e a foto ao centro */
-    justify-content: space-between;/* Distribui o espaço entre as caixas */
-    gap: 50px;                    /* Cria o espaçamento entre o texto e a imagem */
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
 }
 
-/* Força o texto a ficar no lado esquerdo e ocupar o espaço flexível */
+/* Controle de preenchimento dinâmico para a coluna de texto */
 .sobre-texto {
     flex: 1;
-    order: 1;                     /* Garante que o texto venha primeiro (esquerda) */
+    order: 1;
 }
 
-/* Estilização dos títulos e parágrafos do texto (opcional para acabamento) */
+/* Configuração de anti-aliasing e tamanho do título da seção institucional */
 .sobre-texto h2 {
     font-family: 'Tan Mon Cheri', serif;
     -webkit-font-smoothing: antialiased;
@@ -394,29 +434,30 @@ border-bottom: 1px solid #e0c385;
     margin-bottom: 10px;
 }
 
+/* Formatação padrão de parágrafo da descrição pessoal */
 .sobre-texto p {
     font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 15px;
-    color: #5d5151; /* Mantém a cor padrão do seu body */
+    color: #5d5151;
 }
 
-/* Força a foto a ficar no lado direito com tamanho fixo ideal */
+/* Trava de largura da coluna direita que abriga a imagem */
 .sobre-img {
-    flex: 0 0 380px;              /* Define a largura fixa para a área da foto */
-    order: 2;                     /* Garante que a foto venha depois (direita) */
+    flex: 0 0 380px;
+    order: 2;
 }
 
-/* Se você usar uma tag <img> real dentro da classe .sobre-img */
+/* Configuração de proporção, sombra e arredondamento da imagem do profissional */
 .sobre-img img {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 50px;           /* Deixa os cantos levemente arredondados */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Sombra elegante */
+    border-radius: 50px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Caso ainda esteja usando a caixinha escrita "FOTO AQUI" para testar: */
+/* Caixa temporária estrutural usada antes da inserção da imagem definitiva */
 .moldura-foto {
     width: 100%;
     height: 450px;
@@ -429,76 +470,80 @@ border-bottom: 1px solid #e0c385;
     font-weight: bold;
 }
 
-/* --- Responsividade para Celular --- */
+/* Reorganização de colunas da seção Sobre Mim para telas menores */
 @media (max-width: 768px) {
+    /* Empilhamento vertical dos blocos */
     .sobre-grid {
-        flex-direction: column;   /* Empilha os elementos no celular */
+        flex-direction: column;
         gap: 30px;
     }
 
+    /* Altera a ordem de leitura jogando o bloco de texto para baixo */
     .sobre-texto {
-        order: 2;                 /* No celular, o texto fica embaixo */
-        text-align: center;       /* Centraliza o texto no mobile */
+        order: 2;
+        text-align: center;
     }
 
+    /* Modifica a ordem jogando a imagem para o topo e readequando o tamanho máximo */
     .sobre-img {
-        order: 1;                 /* No celular, a foto fica em cima */
+        order: 1;
         flex: 0 1 auto;
         width: 100%;
-        max-width: 320px;         /* Limita o tamanho da foto no celular */
+        max-width: 320px;
     }
     
+    /* Redução na altura do bloco placeholder no mobile */
     .moldura-foto {
-        height: 350px;            /* Ajusta a altura do bloco de teste no celular */
+        height: 350px;
     }
 }
 
+/* ==========================================
+   SEÇÃO MISSÃO, VISÃO E VALORES
+   ========================================== */
 
-/* --- Estilização da Seção Missão, Visão e Valores --- */
-
-/* Fundo da seção inteira */
+/* Seção institucional escura com esticamento vertical de tela cheia */
 .bg-dark {
-    background-color: #00001d;
+    background-color: var(--azul-fundo);
     color: var(--branco-gelo);
-    /* Configurações para esticar verticalmente de ponta a ponta */
-    min-height: 100vh;       /* Ocupa no mínimo 100% da altura da tela */
-    display: flex;           /* Ativa o flexbox na section */
-    align-items: center;     /* Centraliza o conteúdo (os cards) verticalmente */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
     width: 100%;
 }
 
-/* Alinha as 3 caixas em colunas paralelas */
+/* Distribuição de espaço em 3 colunas iguais para os cards institucionais */
 .grid-3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px; /* Espaçamento elegante entre os cards */
+    gap: 30px;
     width: 100%;
 }
 
-/* Estilização individual de cada Card */
+/* Layout interno, bordas finas e espaçamento dos cards de MVV */
 .missao-card {
-    background-color: #000020ce; /* Um preto levemente mais claro que o fundo para dar relevo */
-    border: 1px solid rgba(151, 120, 51, 0.462); /* Borda dourada bem sutil */
+    background-color: #000020ce;
+    border: 1px solid rgba(151, 120, 51, 0.462);
     padding: 40px 30px;
     border-radius: 4px;
-    text-align:     center;
+    text-align: center;
     transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-/* Efeito sutil ao passar o mouse */
+/* Efeito de levitação e destaque de borda ativa ao passar o mouse */
 .missao-card:hover {
-    transform: translateY(-5px); /* Eleva o card levemente */
-    border-color: var(--dourado); /* Acende a borda dourada */
+    transform: translateY(-5px);
+    border-color: var(--dourado);
 }
 
-/* Estilo dos Ícones */
+/* Dimensionamento e cor dos ícones decorativos superiores dos cards */
 .missao-icon {
-    font-size: 2rem;
+    font-size: 3.4rem;
     color: var(--dourado);
     margin-bottom: 20px;
 }
 
-/* Títulos (Missão, Visão, Valores) */
+/* Estilização e espaçamento do título de cada bloco institucional */
 .missao-card h3 {
     font-family: 'Tan Mon Cheri', serif;
     -webkit-font-smoothing: antialiased;
@@ -509,163 +554,160 @@ border-bottom: 1px solid #e0c385;
     letter-spacing: 1.2px;
 }
 
-/* Texto descritivo interno */
+/* Definição de cor suavizada para o texto descritivo dos cards */
 .missao-card p {
     font-size: 1rem;
     line-height: 1.8;
-    color: #c4c4c4; /* Tom cinza claro para não brigar com o título */
+    color: #c4c4c4;
 }
 
-/* --- Responsividade para Celular --- */
+/* Quebra e adaptação da seção MVV para formato mobile */
 @media (max-width: 992px) {
-
-    .bg-dark{
-        padding: 60px 0px; /* Ajusta o padding para telas menores */
+    /* Remove a limitação de altura da janela para evitar transbordo de conteúdo */
+    .bg-dark {
+        padding: 60px 0px;
         height: auto;
     }
+    
+    /* Converte o grid triplo para exibição em uma única coluna vertical */
     .grid-3 {
-        grid-template-columns: 1fr; /* Transforma em 1 coluna em tablets e celulares */
+        grid-template-columns: 1fr;
         gap: 20px;
     }
     
+    /* Ajuste de preenchimento dos cards para telas menores */
     .missao-card {
         padding: 30px 20px;
     }
 }
 
-/* ==========================================================================
-   REMODELAÇÃO: ÁREAS DE ATUÇÃO (ESTILO EDITORIAL MINIMALISTA)
-   ========================================================================== */
+/* ==========================================
+   SEÇÃO ÁREAS DE ATUAÇÃO
+   ========================================== */
 
-#servicos {
-    background-color: var(--branco-gelo); /* Mantém o fundo claro desejado */
-    padding: 120px 0;
-    width: 100%;
-}
-
-.servicos-header {
-    margin-bottom: 80px;
-}
-
-.tt_areas_atuacao { 
-    font-family: 'Tan Mon Cheri', serif;
-    font-size: 3.2rem;  
-    color: var(--dourado);
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-}
-
-.subtitulo-atuacao {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.95rem;
-    color: #5d5151;
-    max-width: 650px;
-    margin: 0 auto;
-    line-height: 1.6;
-}
-
-/* Container que divide os 4 serviços em um layout elegante de 2x2 sem caixas */
-.linhas-editoriais-servicos {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px 80px; /* Espaçamento largo e sofisticado */
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-/* O Item Editorial: Baseado em linhas divisórias finas */
-.item-editorial {
+/* Configurações da seção clara com alinhamento vertical centralizado por colunas */
+.bg-clean {
+    background-color: var(--branco-gelo);
+    min-height: 100vh;
     display: flex;
-    align-items: flex-start;
-    gap: 25px;
-    padding: 30px;
-    border-radius: 4px;
-    border: 1px solid #b39659; /* Linha dourada fina horizontal */
-    transition: all 0.3s ease;
-}
-
-/* Ícone elegante e discreto na lateral */
-.editorial-icon {
-    font-size: 2rem;
-    color: var(--dourado);
-    padding-top: 4px; /* Alinha perfeitamente com a primeira linha do título */
-}
-
-.linha-vertical-ouro {
-    width: 1px;             /* Espessura */
-    height: 100px;          /* Altura que você desejar para a linha */
-    background-color: #b39659;
-    margin: 0 20px;         /* Espaçamento nas laterais para afastar outros elementos */
-}
-
-/* Alinhamento dos textos */
-.editorial-content {
-    display: flex;
+    align-items: center;
+    width: 100%;
     flex-direction: column;
 }
 
-/* Títulos elegantes em Azul Escuro */
-.editorial-content h3 {
+/* Bloco superior centralizado que serve como introdução da listagem de serviços */
+.servicos-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+}
+
+/* Título principal da listagem de competências/áreas */
+.tt_areas_atuacao {
     font-family: 'Tan Mon Cheri', serif;
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: var(--dourado); /* Conecta com o tom principal do site */
-    margin: 0 0 12px 0;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    font-size: 2.5rem;
+    letter-spacing: 0.02em;
+    color: var(--azul-fundo);
+    margin-bottom: 16px;
 }
 
-/* Descrições */
-.editorial-content p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.9rem;
-    color: #5d5151;
-    line-height: 1.6;
-    margin: 0;
+/* Texto de apoio explicativo posicionado logo abaixo do título claro */
+.subtitulo-atuacao {
+    font-size: 1.1rem;
+    color: #00002097;
+    line-height: 1.7;
 }
 
-/* Interação sutil ao passar o mouse (a linha dourada ganha vida) */
-.item-editorial:hover {
-    border-color: #00001d; /* A linha muda sutilmente para o azul escuro */
-    transform: translateX(5px); /* Um leve movimento lateral, totalmente diferente do vertical da missão */
+/* Grid de alinhamento para os blocos de serviços (3 colunas com largura mínima segura) */
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    width: 100%;
+    max-width: 1200px;
 }
 
-/* ==========================================================================
-   Responsividade
-   ========================================================================== */
+/* Cards individuais das frentes de atuação com trava de altura mínima de segurança */
+.areas-card {
+    background-color: var(--branco);
+    border: 1px solid #000020ce;
+    padding: 40px 30px;
+    border-radius: 4px;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 280px; /* Garante tamanho uniforme caso o texto de um card seja maior */
+}
+
+/* Animação suave de subida e acendimento de borda no hover dos cards */
+.areas-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--dourado);
+}
+
+/* Tamanho de exibição dos ícones das especialidades */
+.areas-icon {
+    font-size: 3.4rem;
+    color: var(--dourado);
+    margin-bottom: 20px;
+}
+
+/* Cabeçalhos internos de cada card de especialidade */
+.areas-card h3 {
+    font-family: 'Tan Mon Cheri', serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 1.8rem;
+    color: #00001f;
+    margin-bottom: 15px;
+    letter-spacing: 1.2px;
+}
+
+/* Injeção de uma linha decorativa dourada centralizada abaixo do título do card */
+.areas-card h3::after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: var(--dourado);
+    margin: 12px auto 0;
+}
+
+/* Formatação do texto de descrição do serviço ou área */
+.areas-card p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #4a4a4a;
+}
+
+/* Ajustes de espaçamento interno da seção de serviços no mobile */
 @media (max-width: 992px) {
-    .linhas-editoriais-servicos {
-        grid-template-columns: 1fr; /* Vira uma coluna única em tablets e celulares */
-        gap: 40px;
+    .areas-card {
+        padding: 30px 20px;
     }
 }
 
-@media (max-width: 768px) {
-    .tt_areas_atuacao {
-        font-size: 2.4rem;
-    }
-}
+/* ==========================================
+   FOOTER E CONTATO
+   ========================================== */
 
-/* ==========================================================================
-   RODAPÉ E CONTATO PREMIUM
-   ========================================================================== */
-
+/* Base escura do rodapé contendo o bloco principal de fechamento e conversão */
 footer { 
-    background-color: #00001d; 
+    background-color: var(--azul-fundo); 
     color: #ffffff; 
     display: flex;  
-    padding: 120px 0 50px 0; /* Aumentado o padding superior para dar imponência */
+    padding: 120px 0 50px 0; 
 }
 
-/* Centralizador padrão da sua página */
+/* Alinhamento e limitação horizontal interna específicos para o rodapé */
 footer .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 30px;
 }
 
+/* Círculo base para abrigar pequenos ícones indicativos na área de dúvidas/faq */
 .faq-icone-circulo {
     width: 32px;
     height: 32px;
@@ -673,96 +715,98 @@ footer .container {
     border-radius: 50%;
     display: flex;
     justify-content: center;
-    flex-shrink: 0;
+    flex-shrink: 0; /* Impede a distorção do círculo em layouts flex compactados */
     margin-top: 4px;
 }
 
-/* Estiliza o ícone dentro do círculo */
+/* Definição cromática e de escala do ícone interno do círculo */
 .faq-icone-circulo i {
-    color: #C5A86A;
-    font-size: 0.9rem; /* Tamanho do ícone interno */
+    color: var(--dourado);
+    font-size: 0.9rem;
 }
 
+/* Grid duplo dividindo a coluna de informações (esquerda) e o formulário (direita) */
 .contact-grid { 
     display: grid; 
     grid-template-columns: 1fr 1fr; 
-    gap: 300px; /* Maior espaçamento central para distribuir melhor os lados */
+    gap: 300px; /* Amplo vão central separador de blocos */
     align-items: start;
 }
 
-/* Coluna da Esquerda */
-.contato-info-bloco {
-    display: flex;
-    flex-direction: column;
-}
-
+/* Configuração do título principal da seção de contatos */
 .contact-grid h2 {
     font-family: 'Tan Mon Cheri', serif;
-    font-size: 2.8rem; /* Título maior e mais marcante */
+    font-size: 2.8rem;
     color: var(--dourado);
     margin-bottom: 35px;
     letter-spacing: 4px;
 }
 
-/* Lista de informações de contato */
+/* Box flex organizador vertical da listagem de dados de contato */
 .lista-contatos-linhas {
     display: flex;
     flex-direction: column;
-    gap: 22px; /* Espaço elegante entre um dado e outro */
+    gap: 22px;
 }
 
+/* Alinhamento horizontal para ícone e texto de cada dado (e-mail, tel, end) */
 .item-contato {
     display: flex;
     align-items: flex-start;
     gap: 15px;
 }
 
+/* Customização dos ícones indicadores da lista de contatos */
 .item-contato i {
     color: var(--dourado);
-    font-size: 1.2rem;
+    font-size: 1.6rem;
 }
 
+/* Formatação do texto de resposta/dado da lista de contatos */
 .item-contato span {
     font-family: 'Montserrat', sans-serif;
-    color: #cbd5e1; /* Branco suave de excelente leitura */
+    color: #cbd5e1;
     line-height: 1.6;
     font-size: 1rem;
 }
 
-/* O Botão do WhatsApp alinhado */
+/* Botão vazado de link direto para conversação no WhatsApp */
 .btn-whatsapp { 
     background: transparent; 
-    border: 1px solid #25d366;
-    color: #25d366; 
     padding: 14px 30px; 
     display: inline-block; 
     border-radius: 6px; 
     text-decoration: none; 
     margin-top: 35px; 
-    align-self: flex-start; /* Impede o botão de esticar até o final da tela */
+    align-self: flex-start; /* Impede o botão de expandir para além do seu próprio conteúdo */
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 0.95rem;
     transition: all 0.3s ease;
+    border: 1px solid var(--dourado);
+    color: var(--dourado);
 }
 
+/* Espaçamento do ícone interno do WhatsApp em relação ao texto adjacente */
 .btn-whatsapp i {
     margin-right: 8px;
 }
 
+/* Efeito de preenchimento cromático e inversão no hover do link do WhatsApp */
 .btn-whatsapp:hover {
-    background: #25d366;
-    color: white;
-    box-shadow: 0 5px 20px rgba(37, 211, 102, 0.25);
+    background: var(--dourado);
+    color: var(--azul-fundo);
+    box-shadow: 0 5px 20px rgba(184, 150, 60, 0.35);
 }
 
-/* Bloco Horário de Atendimento (Preenche o vazio inferior da esquerda) */
+/* Bloco isolado inferior com informações de horários de expediente */
 .bloco-horario {
     margin-top: 45px;
     padding-top: 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08); /* Linha divisória sutil */
+    border-top: 1px solid rgba(255, 255, 255, 0.08); /* Linha sutil de divisão */
 }
 
+/* Cabeçalho do bloco informativo de expedientes */
 .bloco-horario h3 {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.1rem;
@@ -771,11 +815,13 @@ footer .container {
     font-weight: 500;
 }
 
+/* Alinhamento do ícone interno que acompanha o cabeçalho de horários */
 .bloco-horario h3 i {
     margin-right: 8px;
     color: var(--dourado);
 }
 
+/* Estilização do texto com a descrição detalhada dos dias e horas */
 .bloco-horario p {
     font-family: 'Montserrat', sans-serif;
     color: #94a3b8;
@@ -783,14 +829,15 @@ footer .container {
     line-height: 1.6;
 }
 
-/* INPUTS TRANSFORMAÇÃO (Direita) */
+/* Box wrapper do formulário de captura e envio de e-mails */
 .form-contato .grupo-input {
     width: 100%;
 }
 
+/* Estilização geral dos campos de input de texto e textareas do formulário */
 .form-contato input, .form-contato textarea { 
     width: 100%; 
-    padding: 16px 20px; /* Mais espaço interno para caixas maiores e robustas */
+    padding: 16px 20px; 
     margin-bottom: 20px; 
     border-radius: 6px; 
     background: rgba(255, 255, 255, 0.04); 
@@ -801,11 +848,12 @@ footer .container {
     transition: all 0.3s ease;
 }
 
-/* Cor do placeholder ajustada para melhor legibilidade no fundo escuro */
+/* Customização de cor para as mensagens em placeholder dos inputs */
 .form-contato input::placeholder, .form-contato textarea::placeholder {
     color: #64748b;
 }
 
+/* Mudança de fundo e acendimento de borda dourada ao focar em um campo */
 .form-contato input:focus, .form-contato textarea:focus {
     outline: none;
     border-color: var(--dourado); 
@@ -813,12 +861,13 @@ footer .container {
     box-shadow: 0 0 10px rgba(197, 168, 106, 0.1);
 }
 
+/* Trava de redimensionamento apenas vertical e altura padrão do campo de mensagem */
 .form-contato textarea {
     resize: vertical;
-    min-height: 190px; /* Altura ideal para equilibrar com a coluna esquerda */
+    min-height: 190px; /* Ajuda a balancear visualmente a altura da coluna da esquerda */
 }
 
-/* Botão Enviar E-mail */
+/* Botão preenchido de submissão/disparo do formulário */
 .btn-submit { 
     background: var(--dourado); 
     color: #0c1020; 
@@ -835,20 +884,26 @@ footer .container {
     transition: all 0.3s ease;
 }
 
+/* Alteração de tonalidade cromática no hover do botão de envio */
 .btn-submit:hover {
     background: #e0c385;
     box-shadow: 0 5px 20px rgba(197, 168, 106, 0.2);
 }
 
-/* Mobile */
+/* Ajustes responsivos para colapso do grid do rodapé */
 @media (max-width: 992px) {
+    /* Desfaz o grid de duas colunas, empilhando formulário e contatos */
     .contact-grid { 
         grid-template-columns: 1fr; 
         gap: 50px; 
     }
+    
+    /* Redução dos paddings de respiro verticais do rodapé */
     footer { padding: 60px 0; }
+    
+    /* Redução de escala do título de fechamento para dispositivos móveis */
     .contact-grid h2 { font-size: 2.2rem; margin-bottom: 25px; }
+    
+    /* Redução na margem do bloco de horário no mobile */
     .bloco-horario { margin-top: 35px; }
 }
-
-
