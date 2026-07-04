@@ -16,7 +16,6 @@
 
 /* Variáveis globais de cores do projeto */
 :root {
-    --caramelo: #af7b4b;
     --dourado: #b99851;
     --branco-gelo: #fdfbf7;
     --azul-fundo: #00001d;
@@ -127,9 +126,10 @@ nav {
 /* Tipografia e espaçamento individual dos links do menu */
 .nav-links li a { 
     text-decoration: none; 
-    color: var(--dourado); 
+    color: #e0c385; 
+    font-family: 'Montserrat', sans-serif;
     margin-left: 25px; 
-    font-weight: 600; 
+    font-weight: 400; 
     font-size: 0.9rem; 
     transition: 0.3s; 
 }
@@ -140,7 +140,7 @@ nav {
     border-bottom: 1px solid #e0c385;
 }
 
-/* Ícone de menu hambúrguer ocultado por padrão no desktop */
+/* Ícone de menu ocultado por padrão no desktop */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -169,7 +169,7 @@ nav {
         right: -100%; 
         top: 80px;
         flex-direction: column;
-        background-color: var(--branco);
+        background-color: var(--azul-fundo);
         width: 100%;
         text-align: center;
         transition: 0.3s;
@@ -193,14 +193,36 @@ nav {
 
 /* Configurações estruturais do bloco de abertura (dobra principal) */
 .hero {
-    background: var(--azul-fundo); 
+    background-image: url('img/colunas3.jpg');
+    background-size: cover;
+    background-position: center top; /* "top" para mostrar o topo das colunas */
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* parallax sutil */
     height: 100vh;
-    min-height: 600px; /* Impede achatamento do conteúdo em resoluções com pouca altura */
+    min-height: 600px;
     display: flex;
     align-items: center;
-    overflow: hidden; 
-    position: relative; 
-    padding-top: 40px; 
+    overflow: hidden;
+    position: relative;
+    padding-top: 80px;
+
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 29, 0.80);
+    z-index: 1;
+}
+
+/* garante que tudo fica acima do overlay */
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-footer-info {
+    z-index: 3;
 }
 
 /* Box de controle e largura máxima do texto da dobra principal */
@@ -209,7 +231,7 @@ nav {
     flex-direction: column;
     max-width: 650px; 
     align-items: flex-start;
-    margin-top: -60px; /* Sobe o alinhamento visual do bloco de texto */
+    margin-top: 10px; /* Sobe o alinhamento visual do bloco de texto */
 }
 
 /* Ajustes no container da Hero para receber elementos com posicionamento absoluto */
@@ -220,6 +242,21 @@ nav {
     width: 100%;
     position: relative;
     z-index: 2; /* Mantém os textos na frente da imagem da coluna grega */
+}
+
+/*Nome da Doutora*/
+.hero-assinatura {
+    font-family: 'Tan Mon Cheri', serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--dourado);
+    letter-spacing: 0.12em;
+    line-height: 1.3;
+    margin-top: 20px;
+    margin-bottom: 24px;
+    opacity: 0.9;
 }
 
 /* Tag/texto superior curto que antecede o título principal */
@@ -299,34 +336,6 @@ nav {
     transform: translateX(5px);
 }
 
-/* Imagem decorativa de fundo posicionada de forma absoluta na lateral */
-.coluna-grega-img {
-    position: absolute;
-    right: -30px; /* Sangria para fora do limite da tela para efeito visual */
-    top: 12%;
-    height: 88%;
-    width: auto;
-    object-fit: contain;
-    z-index: 1; /* Alinhada abaixo da camada de texto (.container z-index:2) */
-    opacity: 0.60;
-    pointer-events: none; /* Bloqueia cliques ou seleção indesejada na imagem */
-}
-
-/* Bloco inferior contendo informações de geolocalização ou rodapé interno */
-.hero-footer-info {
-    position: absolute;
-    left: 0; 
-    bottom: -60px; 
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.85rem;
-    color: #52526b; 
-    letter-spacing: 0.5px;
-    z-index: 3;
-}
-
 /* Espaçamento interno para os itens separados por barra vertical */
 .info-line {
     position: relative;
@@ -351,24 +360,22 @@ nav {
 }
 
 /* Ajustes da seção Hero em resoluções intermediárias e mobiles */
-@media (max-width: 1280px) {
-    /* Reposiciona as informações do rodapé interno para não colarem na borda */
-    .hero-footer-info {
-        left: 30px; 
-    }
-}
 
 @media (max-width: 992px) {
     /* Centralização geral do layout de textos na versão mobile */
     .hero {
         text-align: center;
         padding-top: 100px;
+        padding-bottom: 60px; 
+        height: auto;         
+        min-height: 100vh;   
     }
     
     /* Força os elementos internos a alinharem ao centro do eixo horizontal */
     .hero-conteudo {
         align-items: center;
         max-width: 100%;
+        padding: 0 24px 40px;
     }
     
     /* Alinhamento próprio do botão para o centro da tela */
@@ -378,17 +385,7 @@ nav {
     
     /* Redução do tamanho da fonte do título para evitar quebras agressivas */
     .hero-title {
-        font-size: 2.8rem;
-    }
-    
-    /* Reposiciona a imagem decorativa de fundo centralizada no mobile */
-    .coluna-grega-img {
-        height: 50%;
-        top: auto;
-        bottom: 0;
-        right: 50%;
-        transform: translateX(50%);
-        opacity: 0.15; /* Reduz a opacidade para garantir contraste com o texto sobreposto */
+        font-size: 2.2rem;
     }
     
     /* Transforma o rodapé absoluto em bloco flex comum no fluxo da página */
@@ -554,6 +551,15 @@ nav {
     letter-spacing: 1.2px;
 }
 
+.missao-card h3::after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: var(--dourado);
+    margin: 12px auto 0;
+}
+
 /* Definição de cor suavizada para o texto descritivo dos cards */
 .missao-card p {
     font-size: 1rem;
@@ -630,7 +636,7 @@ nav {
 /* Cards individuais das frentes de atuação com trava de altura mínima de segurança */
 .areas-card {
     background-color: var(--branco);
-    border: 1px solid #000020ce;
+    border: 1px solid #000020e9;
     padding: 40px 30px;
     border-radius: 4px;
     text-align: center;
@@ -643,7 +649,7 @@ nav {
 /* Animação suave de subida e acendimento de borda no hover dos cards */
 .areas-card:hover {
     transform: translateY(-5px);
-    border-color: var(--dourado);
+    border-color: #000051df;
 }
 
 /* Tamanho de exibição dos ícones das especialidades */
@@ -683,8 +689,24 @@ nav {
 
 /* Ajustes de espaçamento interno da seção de serviços no mobile */
 @media (max-width: 992px) {
+    .bg-clean {
+        padding: 60px 20px;
+    }
+
+    .grid-4 {
+        grid-template-columns: 1fr;
+    }
+
     .areas-card {
         padding: 30px 20px;
+    }
+
+    .areas-card h3 {
+        font-size: 1.4rem;
+    }
+
+    .servicos-header {
+        padding: 0 20px;
     }
 }
 
@@ -889,21 +911,46 @@ footer .container {
     background: #e0c385;
     box-shadow: 0 5px 20px rgba(197, 168, 106, 0.2);
 }
-
-/* Ajustes responsivos para colapso do grid do rodapé */
 @media (max-width: 992px) {
-    /* Desfaz o grid de duas colunas, empilhando formulário e contatos */
-    .contact-grid { 
-        grid-template-columns: 1fr; 
-        gap: 50px; 
+
+    /* Contact grid já tem o 1fr, mas falta padding lateral */
+    footer {
+        padding: 60px 0;
     }
-    
-    /* Redução dos paddings de respiro verticais do rodapé */
-    footer { padding: 60px 0; }
-    
-    /* Redução de escala do título de fechamento para dispositivos móveis */
-    .contact-grid h2 { font-size: 2.2rem; margin-bottom: 25px; }
-    
-    /* Redução na margem do bloco de horário no mobile */
-    .bloco-horario { margin-top: 35px; }
+
+    footer .container {
+        padding: 0 20px; /* ESSENCIAL — impede o vazamento lateral */
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    /* E-mail longo cortando na tela */
+    .item-contato span {
+        word-break: break-all; /* quebra o e-mail longo */
+        font-size: 0.9rem;
+    }
+
+    /* Formulário vazando */
+    .form-contato input,
+    .form-contato textarea {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    .contact-grid h2 {
+        font-size: 2rem;
+        margin-bottom: 25px;
+    }
+
+    .btn-whatsapp {
+        width: 100%; /* botão ocupa largura total no mobile */
+        text-align: center;
+    }
+
+    .bloco-horario {
+        margin-top: 35px;
+    }
 }

@@ -3,239 +3,254 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nelemar Machado | Advocacia</title>
-    <link rel="stylesheet" href="adv.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script> 
-    <!-- link para Font Awesome (ícones) -->
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- link para Google Fonts (tipografia) -->
+    
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <title>Nelemar Machado | Advocacia</title>+
+    
+    <!-- Pré-conexão para otimizar o carregamento das fontes do Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fontes do Projeto: Playfair Display (Títulos), Montserrat (Texto) e Cormorant Garamond -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Bibliotecas de Ícones: Font Awesome e Estilos CSS Locais -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="adv.css">
+    
+    <!-- Ícones do Phosphor Icons (Carregamento adiado para performance) -->
+    <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
 </head>
     
 <body>
 
+    <!-- ==========================================================================
+         HEADER / BARRA DE NAVEGAÇÃO
+         ========================================================================== -->
     <header>
         <nav class="container">
-        <span class="sigla">
-            <span class="letra-n">N</span>
-            <span class="letra-m">M</span>
-        </span>
-        
-        <div class="menu-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
+            <!-- Logotipo / Sigla do Escritório -->
+            <span class="sigla">
+                <span class="letra-n">N</span>
+                <span class="letra-m">M</span>
+            </span>
+            
+            <!-- Menu Hambúrguer (Mobile) -->
+            <div class="menu-toggle" id="mobile-menu" aria-label="Abrir menu de navegação" role="button" tabindex="0">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
 
-        <ul class="nav-links">
-            <li><a href="#home" class="nav-link active">Home</a> </li>
-            <li><a href="#sobre" class="nav-link">Dra. Nelemar</a> </li>
-            <li><a href="#missao" class="nav-link">Missão</a> </li>
-            <li><a href="#servicos" class="nav-link">Serviços</a> </li>
-            <li><a href="#contato" class="nav-link">Contato</a> </li>
-        </ul>
-    </nav>
+            <!-- Links de Navegação (Desktop / Mobile) -->
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#sobre" class="nav-link">Dra. Nelemar</a></li>
+                <li><a href="#missao" class="nav-link">Missão</a></li>
+                <li><a href="#areas" class="nav-link">Serviços</a></li> 
+                <li><a href="#contato" class="nav-link">Contato</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section id="home" class="hero">
-        <!-- Sua imagem mantida exatamente no mesmo lugar -->
-        <img src="img/coluna.png" alt="NM Advocacia" class="coluna-grega-img">
-
-        <div class="container hero-grid">
-            <div class="hero-conteudo">
-                <!-- Texto dourado de introdução do novo layout -->
-                <span class="hero-subtitle">Advocacia Especializada</span>
-                
-                <!-- O título principal serifado ajustado conforme a referência -->
-                <h1 class="hero-title">Defendendo seus direitos
-                com estratégia e excelência</h1>
-                
-                <!-- A linha fina divisória elegante -->
-                <div class="hero-divider"></div>
-                
-                <!-- Texto de apoio/descrição -->
-                <p class="hero-text">
-                    Atuação jurídica personalizada para pessoas e empresas.
-                </p>
-                
-                <!-- Seu botão adaptado com a setinha de ação -->
-                <a href="#contato" class="btn-hero">
-                    Agendar Consulta <span class="arrow">→</span>
-                </a>
-            </div>
+    <!-- ==========================================================================
+         CONTEÚDO PRINCIPAL (MAIN)
+         ========================================================================== -->
+    <main>
         
-        
-        <!-- Elemento de localização inserido na base da seção -->
-        <div class="hero-footer-info">
-            <span class="info-line">Nelemar Machado Advocacia</span>
-            <span class="info-dot">•</span>
-            <span>São Paulo – Brasil</span>
-        </div>
-    
-    </section>
+        <!-- SEÇÃO HERO (Apresentação Principal) -->
+        <section id="home" class="hero">
+               <div class="hero-overlay"></div>
 
-    <section id="sobre" class="section">
-        <div class="container sobre-grid">
-            <div class="sobre-img">
-                <img src="img/foto-nelemar.png" alt="Dra. Nelemar Machado">
+            <div class="container hero-grid">
+                <div class="hero-conteudo">
+                    <span class="hero-assinatura">Nelemar<br>Machado</span>
+                    <span class="hero-subtitle">Advocacia Especializada</span>
+                    <h1 class="hero-title">Defendendo seus direitos com estratégia e excelência</h1>
+                    <div class="hero-divider"></div>
+                    <p class="hero-text">
+                        Atuação jurídica personalizada para pessoas e empresas.
+                    </p>
+                    <a href="#contato" class="btn-hero">
+                        Agendar Consulta <span class="arrow" aria-hidden="true">→</span>
+                    </a>
+                </div>
             </div>
-            <div class="sobre-texto">
-                <h2>Dra. Nelemar</h2>
-                    <p>A <strong>Dra. Nelemar Machado</strong> graduou-se em Direito no ano de 2015 e aprofundou seus conhecimentos pelo prestigiado Instituto Damásio de Direito de São Paulo. Ao longo de sua carreira, especializou-se em atuar de forma incisiva e diligente em causas complexas, dedicando sua vocação à defesa dos direitos dos trabalhadores e ao restabelecimento da justiça, sempre colocando o respeito humano no centro de todas as suas ações jurídicas.</p>
+            
+           
+        </section>
+
+        <!-- SEÇÃO SOBRE (Perfil da Advogada e Escritório) -->
+        <section id="sobre" class="section">
+            <div class="container sobre-grid">
+                <!-- Imagem de Perfil -->
+                <div class="sobre-img">
+                    <img src="img/foto-nelemar.png" alt="Foto de perfil da Dra. Nelemar Machado">
+                </div>
+                <!-- Textos Institucionais -->
+                <div class="sobre-texto">
+                    <h2>Dra. Nelemar Machado</h2>
+                    <p>A <strong>Dra. Nelemar Machado</strong> graduou-se em Direito no ano de 2015 e aprofundou seus conhecimentos pelo prestigiado Instituto Damásio de Direito de São Paulo. Ao longo de sua carreira, especializou-se em atuar de forma incisiva e diligente in causas complexas, dedicando sua vocação à defesa dos direitos dos trabalhadores e ao restabelecimento da justiça, sempre colocando o respeito humano no centro de todas as suas ações jurídicas.</p>
                     <p>Fundado sobre os pilares da transparência e do comprometimento, o escritório <strong>NELEMAR MACHADO</strong> traz na sua bagagem mais de 10 anos de experiência e atuação estratégica no mercado jurídico. Desde a sua fundação, o foco tem sido transformar a complexidade das leis em soluções seguras e eficientes, entendendo que cada caso demanda um olhar único e focado em resultados reais.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção Missão, Visão e Valores -->
-
-    <section id="missao" class="bg-dark section">
-        <div class="container grid-3">
-            <!-- Card Missão -->
-            <div class="missao-card">
-                <div class="missao-icon">
-                    <i class="ph-thin ph-compass"></i>
                 </div>
-                <h3>MISSÃO</h3>
-                <p>Disponibilizar <strong>soluções jurídicas de alta excelência</strong>, atuando com o dinamismo, a agilidade e a precisão técnica que o mercado exige, sem abrir mão do acolhimento e da atenção individualizada a cada caso.</p>
             </div>
-            
-            <!-- Card Visão -->
-            <div class="missao-card">
-                <div class="missao-icon">
-                    <i class="ph-thin ph-eye"></i>
-                </div>
-                <h3>VISÃO</h3>
-                <p>Ser referência de excelência na defesa e na transformação do Direito, consolidando uma banca reconhecida como <strong>integra</strong> e pela compreensão de que por trás de cada processo existe uma história humana <strong>única</strong>.</p>
-            </div>
-            
-            <!-- Card Valores -->
-            <div class="missao-card">
-                <div class="missao-icon">
-                   <i class="ph-thin ph-scales"></i>
-                </div>
-                <h3>VALORES</h3>
-                <p>Nossa atuação é solidificada na <strong>transparência absoluta</strong>, no <strong>comprometimento ético</strong> e na <strong>segurança jurídica</strong>. Guiamo-nos, acima de tudo, pelo respeito inabalável à dignidade de nossos constituintes.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- TESTE -->
-
-    <section id="areas" class="bg-clean section">
-
-        <div class="servicos-header text-center">
-            <h2 class="tt_areas_atuacao">ÁREAS DE ATUAÇÃO</h2>
-            <p class="subtitulo-atuacao">Soluções jurídicas estratégicas com excelência e segurança.</p>
-        </div>
-
-        <div class="container grid-4">
-
-            <!-- Card trabalhista -->
-            <div class="areas-card">
-                <div class="areas-icon">
-                    <i class="ph-thin ph-briefcase"></i>
-                </div>
-                <h3>TRABALHISTA</h3>
-                <p>Atuação estratégica na <strong>defesa do trabalhador</strong> em qualquer instância. Garantimos direitos em <strong>rescisão indireta</strong>, estabilidade, reintegração e indenizações por <strong>doença ocupacional</strong> ou <strong>danos morais</strong>, além do combate à <strong>pejotização</strong>.</p>
-            </div>
-            
-            <!-- Card previdenciário -->
-            <div class="areas-card">
-                <div class="areas-icon">
-                    <i class="ph-thin ph-scales"></i>
-                </div>
-                <h3>PREVIDENCIÁRIO</h3>
-                <p>Orientação especializada para garantir a concessão de benefícios junto ao INSS. Realizamos o planejamento e a <strong>contagem de tempo</strong> para aposentadorias seguras, atuando fortemente na reversão de <strong>benefícios negados</strong>, auxílio-doença e <strong>recursos</strong>.</p>
-            </div>
-
-            <!-- Card família -->
-            <div class="areas-card">
-                <div class="areas-icon">
-                    <i class="ph-thin ph-house"></i>
-                </div>
-                <h3>FAMÍLIA</h3>
-                <p>Atendimento humanizado para resguardar seus direitos e o <strong>patrimônio familiar</strong>. Conduzimos processos de <strong>divórcio</strong>, inventários e partilhas, além de atuação precisa em ações de <strong>alimentos e pensão</strong>, interdição e curatela.</p>
-            </div>
-
-        </div> <!-- fecha grid-4 -->
-    </section>
-
-   <footer>
-    <div class="container" id="contato">
-        <div class="contact-grid">
-            
-            <div class="contato-info-bloco">
-                <h2>CONTATO</h2>
+        <!-- SEÇÃO MISSÃO, VISÃO E VALORES -->
+        <section id="missao" class="bg-dark section">
+            <div class="container grid-3">
                 
-                <div class="lista-contatos-linhas">
-                    <div class="item-contato">
-                        <div class="faq-icone-circulo">
-                            <i class="ph-thin ph-map-pin"></i>
-                        </div>
-                        <span>Rua Java, 132, 2º andar, Sala 22, Centro<br>São Bernardo do Campo - SP</span>
+                <!-- Card: Missão -->
+                <div class="missao-card">
+                    <div class="missao-icon">
+                        <i class="ph-thin ph-compass" aria-hidden="true"></i>
                     </div>
-                    
-                    <div class="item-contato">
-                        <div class="faq-icone-circulo">
-                            <i class="ph-thin ph-phone"></i>
-                        </div>
-                        <span>(11) 96170-0997</span>
+                    <h3>MISSÃO</h3>
+                    <p>Disponibilizar <strong>soluções jurídicas de alta excelência</strong>, atuando com o dinamismo, a agilidade e a precisão técnica que o mercado exige, sem abrir mão do acolhimento e da atenção individualizada a cada caso.</p>
+                </div>
+                
+                <!-- Card: Visão -->
+                <div class="missao-card">
+                    <div class="missao-icon">
+                        <i class="ph-thin ph-eye" aria-hidden="true"></i>
                     </div>
-                    
-                    <div class="item-contato">
-                        <div class="faq-icone-circulo">
-                            <i class="ph-thin ph-envelope"></i>
-                        </div>
-                        <span>contato@nelemarmachadoadvocacia.adv.br</span>
+                    <h3>VISÃO</h3>
+                    <p>Ser referência de excelência na <strong>defesa</strong> e na transformação do Direito, consolidando uma banca reconhecida como <strong>íntegra</strong> e pela compreensão de que por trás de cada processo existe uma história humana <strong>única</strong>.</p>
+                </div>
+                
+                <!-- Card: Valores -->
+                <div class="missao-card">
+                    <div class="missao-icon">
+                        <i class="ph-thin ph-scales" aria-hidden="true"></i>
                     </div>
-                    
-                    <div class="item-contato">
-                        <div class="faq-icone-circulo">
-                            <i class="ph-thin ph-instagram-logo"></i>
-                        </div>
-                        <span>@nelemar_machado_advocacia</span>
+                    <h3>VALORES</h3>
+                    <p>Nossa atuação é solidificada na <strong>transparência absoluta</strong>, no <strong>comprometimento ético</strong> e na <strong>segurança jurídica</strong>. Guiamo-nos, acima de tudo, pelo respeito inabalável à dignidade de nossos constituintes.</p>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- SEÇÃO ÁREAS DE ATUAÇÃO (Serviços) -->
+        <section id="areas" class="bg-clean section">
+            <div class="servicos-header text-center">
+                <h2 class="tt_areas_atuacao">ÁREAS DE ATUAÇÃO</h2>
+                <p class="subtitulo-atuacao">Soluções jurídicas estratégicas com excelência e segurança.</p>
+            </div>
+
+            <div class="container grid-4">
+                <!-- Card: Direito Trabalhista -->
+                <div class="areas-card">
+                    <div class="areas-icon">
+                        <i class="ph-thin ph-briefcase" aria-hidden="true"></i>
                     </div>
+                    <h3>TRABALHISTA</h3>
+                    <p>Atuação estratégica na <strong>defesa do trabalhador</strong> em qualquer instância. Garantimos direitos em <strong>rescisão indireta</strong>, estabilidade, reintegração e indenizações por <strong>doença ocupacional</strong> ou <strong>danos morais</strong>, além do combate à <strong>pejotização</strong>.</p>
+                </div>
+                
+                <!-- Card: Direito Previdenciário -->
+                <div class="areas-card">
+                    <div class="areas-icon">
+                        <i class="ph-thin ph-scales" aria-hidden="true"></i>
+                    </div>
+                    <h3>PREVIDENCIÁRIO</h3>
+                    <p>Orientação especializada para garantir a concessão de benefícios junto ao INSS. Realizamos o planejamento e a <strong>contagem de tempo</strong> para aposentadorias seguras, atuando fortemente na reversão de <strong>benefícios negados</strong>, auxílio-doença e <strong>recursos</strong>.</p>
                 </div>
 
-                <a href="https://wa.me/5511961700997" class="btn-whatsapp" target="_blank">
-                    <i class="fa-brands fa-whatsapp"></i> Falar no WhatsApp
-                </a>
+                <!-- Card: Direito de Família -->
+                <div class="areas-card">
+                    <div class="areas-icon">
+                        <i class="ph-thin ph-house" aria-hidden="true"></i>
+                    </div>
+                    <h3>FAMÍLIA</h3>
+                    <p>Atendimento humanizado para resguardar seus direitos e o <strong>patrimônio familiar</strong>. Conduzimos processos de <strong>divórcio</strong>, inventários e partilhas, além de atuação precisa em ações de <strong>alimentos e pensão</strong>, interdição e curatela.</p>
+                </div>
+            </div> 
+        </section>
+
+    </main>
+
+    <!-- ==========================================================================
+         FOOTER / CONTATO E RODAPÉ
+         ========================================================================== -->
+    <footer>
+        <div class="container" id="contato">
+            <div class="contact-grid">
+                
+                <!-- Bloco de Informações de Contato e Redes Sociais -->
+                <div class="contato-info-bloco">
+                    <h2>CONTATO</h2>
+                    <div class="lista-contatos-linhas">
+                        
+                        <!-- Endereço -->
+                        <div class="item-contato">
+                            <div class="faq-icone-circulo">
+                                <i class="ph-thin ph-map-pin" aria-hidden="true"></i>
+                            </div>
+                            <span>Rua Java, 132, 2º andar, Sala 22, Centro<br>São Bernardo do Campo - SP</span>
+                        </div>
+                        
+                        <!-- Telefone -->
+                        <div class="item-contato">
+                            <div class="faq-icone-circulo">
+                                <i class="ph-thin ph-phone" aria-hidden="true"></i>
+                            </div>
+                            <span>(11) 96170-0997</span>
+                        </div>
+                        
+                        <!-- E-mail -->
+                        <div class="item-contato">
+                            <div class="faq-icone-circulo">
+                                <i class="ph-thin ph-envelope" aria-hidden="true"></i>
+                            </div>
+                            <span>contato@nelemarmachadoadvocacia.adv.br</span>
+                        </div>
+                        
+                        <!-- Instagram -->
+                        <div class="item-contato">
+                            <div class="faq-icone-circulo">
+                                <i class="ph-thin ph-instagram-logo" aria-hidden="true"></i>
+                            </div>
+                            <span>@nelemar_machado_advocacia</span>
+                        </div>
+                    </div>
+
+                    <!-- Botão de Ação Rápida: WhatsApp -->
+                    <a href="https://wa.me/5511961700997" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Falar no WhatsApp
+                    </a>
+                </div>
+
+                <!-- Formulário de Envio de Mensagem por E-mail -->
+                <div class="form-contato">
+                    <form action="#" method="POST">
+                        <div class="grupo-input">
+                            <input type="text" name="nome" id="form-nome" placeholder="Seu Nome" required aria-label="Seu Nome">
+                        </div>
+                        
+                        <div class="grupo-input">
+                            <input type="email" name="email" id="form-email" placeholder="Seu E-mail" required aria-label="Seu E-mail">
+                        </div>
+                        
+                        <div class="grupo-input">
+                            <textarea name="mensagem" id="form-mensagem" placeholder="Como podemos ajudar? Descreva brevemente o seu caso..." required aria-label="Mensagem descritiva do caso"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-submit">Enviar E-mail</button>
+                    </form>
+                </div>
 
             </div>
 
-            <div class="form-contato">
-                <form action="#" method="POST">
-                    <div class="grupo-input">
-                        <input type="text" name="nome" placeholder="Seu Nome" required>
-                    </div>
-                    
-                    <div class="grupo-input">
-                        <input type="email" name="email" placeholder="Seu E-mail" required>
-                    </div>
-                    
-                    <div class="grupo-input">
-                        <textarea name="mensagem" placeholder="Como podemos ajudar? Descreva brevemente o seu caso..." required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn-submit">Enviar E-mail</button>
-                </form>
+            <!-- Informações sobre Horário de Funcionamento -->
+            <div class="bloco-horario">
+                <h3><i class="fa-regular fa-clock" aria-hidden="true"></i> Horário de Atendimento</h3>
+                <p>Segunda a Sexta: 09h às 18h<br>Atendimento presencial com agendamento prévio.</p> 
             </div>
-
         </div>
-        <div class="bloco-horario">
+    </footer>
 
-                    <h3><i class="fa-regular fa-clock"></i> Horário de Atendimento</h3>
-                    <p>Segunda a Sexta: 09h às 18h<br>Atendimento presencial com agendamento prévio.</p> 
-
-        </div>
-    </div>
-</footer>
-
+    <!-- Scripts de Comportamento Interativo (Menu Mobile, Efeitos, etc.) -->
     <script src="adv.js"></script>
 </body>
 </html>

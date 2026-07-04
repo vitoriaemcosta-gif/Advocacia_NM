@@ -15,7 +15,7 @@ const links = document.querySelectorAll('.nav-link');
 document.querySelector('.form-contato').addEventListener('submit', function() {
     const btn = document.querySelector('.btn-submit');
     btn.innerHTML = "Mensagem Enviada!";
-    btn.style.background = "#25d366";
+    btn.style.background = "#b99851";
 });
 
 // NavBar Responsiva
@@ -27,7 +27,7 @@ menu.addEventListener('click', function() {
     menuLinks.classList.toggle('active');
 });
 
-// Fecha o menu ao clicar em qualquer link (opcional, mas recomendado)
+// Fecha o menu ao clicar em qualquer link 
 document.querySelectorAll('.nav-links a').forEach(n => n.addEventListener('click', () => {
     menu.classList.remove('is-active');
     menuLinks.classList.remove('active');
